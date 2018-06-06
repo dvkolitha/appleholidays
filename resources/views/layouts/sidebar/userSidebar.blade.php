@@ -1,0 +1,77 @@
+<div class="col-md-3 left_col menu_fixed">
+        <div class="left_col scroll-view">
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="/images/profile-photo/{{auth()->user()->photo_id ? auth()->user()->profile_photo(auth()->user()->id) : 'empty.jpg'}}" alt=""class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2>{{auth()->user()->first_name}}</h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <ul class="nav side-menu">
+                  <li><a href="/userDashboard"><i class="fa fa-home"></i>DashBoard</a>   
+                  </li>
+                </ul> 
+              <h3>Master</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-edit"></i>User View<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/user-users">Users</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i>Parent View<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/user-parents">parent</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i>Class View<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/user-classes">class</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i>Student View<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/user-students">student</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i>Git Hub<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="https://github.com/">link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+    </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <span class="fa fa-cogs" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <span class="fa fa-arrows-alt" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <span class="fa fa-lock" aria-hidden="true"></span>
+            </a>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+              <span class="fa fa-sign-out" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
